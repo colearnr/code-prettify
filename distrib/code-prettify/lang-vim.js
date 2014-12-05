@@ -1,0 +1,2 @@
+PR.registerLangHandler(PR.createSimpleLexer([["pln",/^[\t\n\r \xa0\u2028\u2029]+/,null,"\t\n\r \u00a0\u2028\u2029"]],[["str",/^"[^\n\r"]*?"/],["str",/^'[^\n\r']*?'/],["com",/^["\u2018\u2019].*/],["kwd",/^(?:function|endfunction|delfunction|return|call|let|unlet|lockvar|unlockvar|if|endif|else|elseif|while|endwhile|for|in|endfor|continue|break|try|endtry|catch|finally|throw|echo|ehon|echohl|echomsg|echoerr|execute|set|autocmd|augroup|[cilnosvx]?(?:nore)?map|command)\b!?/i],
+["lit",/^\d+/],["pln",/^(?:[a-z]|_\w)[\w:]*/i],["pun",/^[^\s\w"']+/]]),["vim"]);
