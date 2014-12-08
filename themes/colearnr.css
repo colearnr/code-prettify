@@ -3,9 +3,9 @@
 //======================== */
 
 pre .str, code .str { color: #e6db5a; } /* string */
-pre .kwd, code .kwd { color: #66d9ef; } /* keyword */
+pre .kwd, code .kwd { color: #486D98; } /* keyword */
 pre .com, code .com { color: #75715e; font-style: italic; } /* comment */
-pre .typ, code .typ { color: #66d9ef; } /* type */
+pre .typ, code .typ { color: #486D98; } /* type */
 pre .lit, code .lit { color: #ae81ff; } /* literal */
 pre .pun, code .pun { color: #fff; } /* punctuation */
 pre .pln, code .pln { color: #fff; } /* plaintext */
@@ -67,13 +67,13 @@ ol.linenums {
   }
 
   pre .str, code .str { color: #060; }
-  pre .kwd, code .kwd { color: #006; font-weight: bold; }
+  pre .kwd, code .kwd { color: #486D98; font-weight: bold; }
   pre .com, code .com { color: #600; font-style: italic; }
   pre .typ, code .typ { color: #404; font-weight: bold; }
   pre .lit, code .lit { color: #044; }
   pre .pun, code .pun { color: #440; }
   pre .pln, code .pln { color: #000; }
-  pre .tag, code .tag { color: #006; font-weight: bold; }
+  pre .tag, code .tag { color: #486D98; font-weight: bold; }
   pre .atn, code .atn { color: #404; }
   pre .atv, code .atv { color: #060; }
 }
