@@ -50,6 +50,9 @@ ol.linenums {
   list-style: decimal inside !important;
 } /* IE indents via margin-left */
 
+li.selected {
+  border: #486D98 solid 1px;
+}
 
 /* =============================================
 //Section: Print Styles (partially from Sunburn Theme)

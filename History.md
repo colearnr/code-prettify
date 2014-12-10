@@ -1,5 +1,8 @@
 ### Change Log
 
+#### 0.0.3
+- Added classes to support line highlighting and scrolling. (See cl.html example)
+
 #### 0.0.2
 - Added CoLearnr theme
 

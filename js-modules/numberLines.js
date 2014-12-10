@@ -122,7 +122,8 @@ function numberLines(node, opt_startLineNum, isPreformatted) {
     // Stick a class on the LIs so that stylesheets can
     // color odd/even rows, or any other row pattern that
     // is co-prime with 10.
-    li.className = 'L' + ((i + offset) % 10);
+    li.className = 'line L' + ((i + offset) % 10);
+    li.id = '' + (i+offset+1);
     if (!li.firstChild) {
       li.appendChild(document.createTextNode('\xA0'));
     }

@@ -6,6 +6,7 @@
 <!-- The defer is not necessary for autoloading, but is necessary for the
      script at the bottom to work as a Quine. -->
 <script src="../dist/prettify.js" defer="defer"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../themes/colearnr.css">
 </head>
 
@@ -52,6 +53,59 @@ specifies that every fifth line should be numbered.
 
   document.getElementById("quine").innerHTML = quineHtml;
 })();
+
+$(document).on('click', 'li.line', function(e) {
+  var line = $(e.currentTarget);
+  if (line && line.length) {
+    var id = line.attr('id');
+    var evtobj=window.event? event : e;
+    if (evtobj.altKey || evtobj.ctrlKey) {
+      var hash = window.location.hash;
+      var lindex = window.location.hash.indexOf('line=');
+      var lines = window.location.hash.substring(lindex + 5);
+      if (lines) {
+        window.location.hash = 'line=' + lines + ',' + id;
+      } else {
+        window.location.hash = 'line=' + id;
+      }
+    } else {
+      window.location.hash = 'line=' + id;
+    }
+  }
+});
+
+var highlightLines = function(scroll) {
+  var hash = window.location.hash;
+  var lindex = window.location.hash.indexOf('line=');
+  var lines = window.location.hash.substring(lindex + 5);
+  if (lines) {
+    $('.line').removeClass('selected');
+    var lineList = lines.split(',');
+    var firstLine = lineList[0];
+    lineList.forEach(function (aline) {
+      $('#' + aline).addClass('selected');
+    });
+    if (scroll) {
+      var node = $("#" + firstLine);
+      if (node && node.length) {
+        $('html, body').animate({
+          scrollTop: node.offset().top - 50
+        }, 500);
+      }
+    }
+  }
+}
+
+$(window).on('hashchange', function(e) {
+  highlightLines(false);
+});
+
+$(document).ready(function() {
+  setTimeout(function() {
+    highlightLines(true);
+  }, 400)
+
+});
 //]]>
 </script></body>
 </html>
